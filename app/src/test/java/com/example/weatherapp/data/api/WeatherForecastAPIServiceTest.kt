@@ -50,7 +50,7 @@ class WeatherForecastAPIServiceTest {
     }
 
     @Test
-    fun getTopHeadlines_receivedResponse_correctContent(){
+    fun getWeatherForecastForReleigh_receivedResponse_correctContent(){
         runBlocking {
             enqueueMockResponse("weatherforecastresponse.json")
             val responseBody = service.getWeatherForecastByCity("Raleigh").body()
