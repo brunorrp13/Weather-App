@@ -43,7 +43,7 @@ data class Data(
     @SerializedName("pop")
     val pop: Int,
     @SerializedName("precip")
-    val precip: Int,
+    val precip: Double,
     @SerializedName("pres")
     val pres: Double,
     @SerializedName("rh")

@@ -11,8 +11,8 @@ interface WeatherForecastAPIService {
     @GET("v2.0/forecast/daily")
     suspend fun getWeatherForecastByCity(
         @Query("city")
-        country:String,
-        @Query("apiKey")
+        city:String,
+        @Query("key")
         apiKey:String = BuildConfig.API_KEY
     ): Response<APIResponse>
 
