@@ -16,7 +16,7 @@ class UseCaseModule {
    fun provideGetWeatherForecastByCityUseCase(
        weatherForecastRepository: WeatherForecastRepository
    ): GetWeatherForecastByCityUseCase {
-      return provideGetWeatherForecastByCityUseCase(weatherForecastRepository)
+      return GetWeatherForecastByCityUseCase(weatherForecastRepository)
    }
 
 }

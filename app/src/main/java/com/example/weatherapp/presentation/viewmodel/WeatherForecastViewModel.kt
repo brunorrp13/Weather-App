@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.anushka.newsapiclient.data.util.Resource
 import com.example.weatherapp.data.model.APIResponse
+import com.example.weatherapp.data.model.Data
 import com.example.weatherapp.domain.usecase.GetWeatherForecastByCityUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,11 +24,10 @@ class WeatherForecastViewModel(
 
     val weatherForecast : MutableLiveData<Resource<APIResponse>> = MutableLiveData()
 
-    fun getWeatherForecast(city: String) = viewModelScope.launch(Dispatchers.IO) {
+    fun getWeatherForecastByCity(city: String) = viewModelScope.launch(Dispatchers.IO) {
         weatherForecast.postValue(Resource.Loading())
         try{
             if(isNetworkAvailable(app)) {
-
                 val apiResult = getWeatherForecastByCityUseCase.execute(city)
                 weatherForecast.postValue(apiResult)
             }else{
@@ -38,6 +38,10 @@ class WeatherForecastViewModel(
             weatherForecast.postValue(Resource.Error(e.message.toString()))
         }
 
+    }
+
+    fun setWeatherForecastAsNull() {
+        weatherForecast.postValue(null)
     }
 
     private fun isNetworkAvailable(context: Context?):Boolean{

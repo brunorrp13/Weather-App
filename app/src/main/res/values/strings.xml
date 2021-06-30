@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Weather App</string>
+    <string name="city_hint">Insira o nome da cidade para busca</string>
+    <string name="search_btn">Buscar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="info">Previsão do tempo para:</string>
 </resources>
